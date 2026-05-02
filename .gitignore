@@ -4,4 +4,6 @@ __pycache__/
 *.pyc
 config.py
 electron/kokoro-v1.0.onnx
-electron/voices-v1.0.bin
+electron/voices-v1.0.bingroq_key.txt 
+kokoro-v1.0.onnx 
+voices-v1.0.bin 
