@@ -1,0 +1,32 @@
+# AI VTuber Backend — встановлення
+# ─────────────────────────────────
+# 1. Встанови CUDA Toolkit 11.8+ якщо ще немає
+# 2. Встанови PyTorch з CUDA підтримкою:
+#    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# 3. Встанови залежності:
+#    pip install -r requirements.txt
+
+faster-whisper
+sounddevice
+numpy
+groq
+websockets
+
+# Kokoro TTS (вибери один варіант):
+# Варіант A — ONNX (легший, не потребує PyTorch):
+#   pip install kokoro-onnx soundfile
+# Варіант B — PyTorch версія (важче але швидше на GPU):
+#   pip install kokoro[gpu]
+
+# ─── NOTES ────────────────────────────────────────────────────────────
+# faster-whisper автоматично завантажить модель large-v3 при першому запуску
+# (~3GB у ~/.cache/huggingface)
+#
+# Kokoro голоси:
+#   af_heart, af_bella  → американська жіноча
+#   jf_alpha, jf_gongitsune → японська жіноча
+#   jm_kumo → японська чоловіча
+#
+# Щоб змінити голос VTuber — редагуй TTS_VOICE і логіку у tts.py
+#
+# WebSocket порт 8765 — Electron підключається до ws://localhost:8765

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: transparent; overflow: hidden; -webkit-app-region: drag; }
+    canvas { display: block; }
+    #subtitle {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-family: sans-serif;
+      font-size: 14px;
+      max-width: 360px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      -webkit-app-region: no-drag;
+    }
+    #subtitle.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div id="subtitle"></div>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js",
+        "three/addons/": "./node_modules/three/examples/jsm/",
+        "@pixiv/three-vrm": "./node_modules/@pixiv/three-vrm/lib/three-vrm.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="renderer.js"></script>
+</body>
+</html>

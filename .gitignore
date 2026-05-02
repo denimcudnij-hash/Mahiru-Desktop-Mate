@@ -1,0 +1,7 @@
+electron/node_modules/
+electron/Mahiru_Angel.vrm
+__pycache__/
+*.pyc
+config.py
+electron/kokoro-v1.0.onnx
+electron/voices-v1.0.bin
